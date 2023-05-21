@@ -2,5 +2,6 @@
 ## Title: doItInYourPants
 ## Author: zZzMadScientistzZz
 ## Version: 1.0
+## SavedVariablesPerCharacter: DoItInYourPantsCharVault
 
 doItInYourPants.lua
