@@ -10,17 +10,18 @@ local function OnEvent()
 			print('Greetings traveler! doItInYourPants addon has been activated!')
 		elseif DoItInYourPantsCharVault == 0 then
 			print('Greetings traveler! You have never been dead, congratulations!')
-			DoItInYourPantsCharVault = DoItInYourPantsCharVault + 1
 		elseif DoItInYourPantsCharVault == 1 then 
 			print('Welcome stranger! You died once!')
-			DoItInYourPantsCharVault = DoItInYourPantsCharVault + 1
 		else
 			print('Welcome stranger! You died ' .. DoItInYourPantsCharVault .. ' times!')
-			DoItInYourPantsCharVault = DoItInYourPantsCharVault + 1
 		end
+	elseif event == 'PLAYER_DEAD' then
+			DoItInYourPantsCharVault = DoItInYourPantsCharVault + 1
+			print("We've got sad news! You have died for the " .. DoItInYourPantsCharVault .. " time!")
 	end
 end
-doItInYourPants = CreateFrame('Frame', 'doItInYourPants', UIParent)
+doItInYourPants = CreateFrame('Frame')
 doItInYourPants:RegisterEvent('ADDON_LOADED')
+doItInYourPants:RegisterEvent('PLAYER_DEAD')
 doItInYourPants:SetScript('OnEvent', OnEvent)
 
