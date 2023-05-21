@@ -4,7 +4,7 @@ local function print(mes)
 end
 
 local function OnEvent()
-	if event == 'ADDON_LOADED' then
+	if event == 'ADDON_LOADED' and arg1 == 'doItInYourPants' then
 		print('Hello, world! - doItInYourPants')
 	end
 end
